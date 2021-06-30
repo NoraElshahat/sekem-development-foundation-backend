@@ -5,7 +5,6 @@ const {
   allProjects,
   updateProject,
   oneProject,
-  findProjectsPictures,
 } = require("../controllers/projectsController");
 const multer = require("multer");
 
@@ -35,6 +34,6 @@ router.patch(
   updateProject
 );
 //find pics of projects
-router.get("/project-pics/:id", findProjectsPictures);
+// router.get("/project-pics/:id", findProjectsPictures);
 
 module.exports = router;

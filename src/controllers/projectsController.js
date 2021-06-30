@@ -84,26 +84,25 @@ const updateProject = async (req, res, next) => {
 };
 
 //find all picture of one project
-const findProjectsPictures = async (req, res, next) => {
-  const id = req.params.id;
-  try {
-    const picsProject = await Projects.find(
-      { _id: id },
-      { pictures: 1, _id: 0 }
-    );
-    if (Object.keys(picsProject) != 0) {
-      return res.status(200).send({ data: picsProject });
-    } else {
-      throw new ErrorHandler(400, "No Data Found");
-    }
-  } catch (error) {
-    next(error);
-  }
-};
+// const findProjectsPictures = async (req, res, next) => {
+//   const id = req.params.id;
+//   try {
+//     const picsProject = await Projects.find(
+//       { _id: id },
+//       { pictures: 1, _id: 0 }
+//     );
+//     if (Object.keys(picsProject) != 0) {
+//       return res.status(200).send({ data: picsProject });
+//     } else {
+//       throw new ErrorHandler(400, "No Data Found");
+//     }
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 module.exports = {
   addProject,
   allProjects,
   oneProject,
   updateProject,
-  findProjectsPictures,
 };
