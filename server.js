@@ -12,6 +12,7 @@ const projectsRouter = require("./src/router/projects-router");
 const sectorsRouter = require("./src/router/sectors-router");
 const programsRouter = require("./src/router/programs-router");
 const mediaCenterRouter = require("./src/router/media-center");
+const careerRouter = require("./src/router/career-router");
 
 app.use(cors());
 
@@ -37,6 +38,7 @@ app.use(sectorsRouter);
 app.use(programsRouter);
 app.use(projectsRouter);
 app.use(mediaCenterRouter);
+app.use(careerRouter);
 
 // middleware for central error handling
 app.use((err, req, res, next) => {
