@@ -4,19 +4,9 @@ const SectorsSchema = new mongoose.Schema({
     type: String,
     required: [true, "sector title required"],
   },
-  breif: {
-    type: String,
-  },
-  aim: {
-    type: String,
-  },
   img: {
     type: String,
   },
-  href: {
-    type: String,
-  },
-
   programs: [
     {
       type: mongoose.Schema.Types.ObjectId,

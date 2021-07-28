@@ -11,7 +11,7 @@ const addPublication = async (req, res, next) => {
     }
     const newPublication = await new Publication(req.body);
     newPublication.img = file[0].filename;
-    newPublication.doc = file[1].filename;
+    // newPublication.doc = file[1].filename;
     console.log(newPublication);
     await newPublication.save();
     if (!Object.keys(newPublication).length == 0) {

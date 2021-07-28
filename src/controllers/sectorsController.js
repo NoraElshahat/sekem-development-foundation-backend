@@ -69,7 +69,6 @@ const oneSector = async (req, res, next) => {
   try {
     const findOne = await Sectors.findById({ _id: id }).populate({
       path: "programs",
-      populate: { path: "projects" },
     });
 
     if (!findOne || findOne.length != 0) {

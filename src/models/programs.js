@@ -3,19 +3,12 @@ const mongoose = require("mongoose");
 const ProgramsSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: [true, "sector title required"],
   },
-  img: {
+  link: {
     type: String,
   },
-  projects: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Projects",
-    },
-  ],
-  breif: {
-    type: String,
+  details: {
+    type: Array,
   },
 });
 

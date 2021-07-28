@@ -5,7 +5,6 @@ const { ErrorHandler } = require("../helpers/error");
 const addProgram = async (req, res, next) => {
   try {
     const programAdded = await new Programs(req.body);
-    programAdded.img = req.file.filename;
     await programAdded.save();
     if (Object.keys(programAdded) != 0) {
       return res.status(200).send({
@@ -23,7 +22,10 @@ const addProgram = async (req, res, next) => {
 // list all paragrams
 const allPrograms = async (req, res, next) => {
   try {
-    const allPrograms = await Programs.find({}).exec();
+    const allPrograms = await Programs.find(
+      {},
+      { title: 1, link: 1, _id: 0 }
+    ).exec();
     if (allPrograms.length != 0) {
       return res.status(200).send({ data: allPrograms });
     } else {
